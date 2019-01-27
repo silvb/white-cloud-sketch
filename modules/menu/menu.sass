@@ -1,3 +1,5 @@
+$menuHeight: 60px
+
 .menu
   background: $mardiGras
   color: $whiteSmoke
@@ -5,9 +7,12 @@
   position: fixed
   top: 0
   left: 0
-  height: 60px
+  z-index: 100
+  height: $menuHeight
   display: flex
   align-items: center
   justify-content: space-around
   &__item
     text-transform: uppercase
+    height: 100%
+    line-height: $menuHeight
