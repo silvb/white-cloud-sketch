@@ -1,0 +1,28 @@
+
+.background
+  background: black
+  z-index: -100
+  height: 100%
+  width: 100%
+  position: fixed
+  top: 0
+  left: 0
+
+  .stars
+    height: 100%
+
+  .star
+
+
+    position: fixed
+    background-color: $whiteSmoke
+    border-radius: 100%
+    @for $i from 1 through $starCount
+      $top:       random(100) * 1vh
+      $left:      random(100) * 1vw
+      $size:      random(3) * 1px
+      &:nth-child(#{$i})
+        top: $top
+        left: $left
+        width: $size
+      height: $size

@@ -1,0 +1,16 @@
+{
+  "name": "white-cloud-sketch",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Silvio Bauer <silvio.bauer@xing.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel index.pug"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "^1.11.0",
+    "pug": "^2.0.3",
+    "sass": "^1.16.1"
+  }
+}
