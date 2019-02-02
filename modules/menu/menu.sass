@@ -1,7 +1,7 @@
 $menuHeight: 60px
 
 .menu
-  background: $mardiGras
+  background: linear-gradient(to left, $purple, 70%, $blue)
   color: $whiteSmoke
   width: 100%
   position: fixed
@@ -13,6 +13,29 @@ $menuHeight: 60px
   align-items: center
   justify-content: space-around
   &__item
-    text-transform: uppercase
+    @include largeFont()
     height: 100%
     line-height: $menuHeight
+    letter-spacing: 4px
+    font-size: 20px
+    position: relative
+
+    &:after
+      content: ''
+      position: absolute
+      left: 50%
+      bottom: 10px
+      height: 1px
+      width: 0%
+      background: $lightblue
+      @include transition(all)
+
+    &:hover:after
+      left: 0
+      width: 100%
+
+    &.highlighted
+      color: $lightblue
+      &:after
+        left: 0
+        width: 100%

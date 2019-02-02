@@ -2,13 +2,15 @@ doctype html
 html
   head
     meta(charset='UTF-8')
+    meta(http-equiv='x-ua-compatible' content='ie=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
     title White Cloud Sketch
     link(rel='stylesheet', href='./style.sass')
-    link(rel='stylesheet', href='http://overpass-30e2.kxcdn.com/overpass.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Major+Mono+Display')
   body
     include modules/menu/menu.pug
     include modules/background/background.pug
     include modules/teaser/teaser.pug
     include modules/gallery/gallery.pug
 
-    //- script(src='./index.js')
+    script(src='./index.js')

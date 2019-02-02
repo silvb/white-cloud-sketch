@@ -1,4 +1,5 @@
 @import 'variables.sass'
+@import 'mixins.sass'
 @import 'reset.sass'
 @import 'modules/background/background.sass'
 @import 'modules/teaser/teaser.sass'
@@ -10,11 +11,10 @@ html
 
 body
   min-height: 100%
-  font-family: overpass, sans-serif
 
 a
   color: $whiteSmoke
   text-decoration: none
-  transition: color 0.2s ease
+  @include transition(color)
   &:hover
-    color: aqua
+    color: $lightblue

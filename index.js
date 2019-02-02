@@ -1,3 +1,5 @@
-import stars from './background/stars';
+import menu from './modules/menu/menu';
 
-stars();
+window.onload = () => {
+  menu();
+};
