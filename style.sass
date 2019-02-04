@@ -11,9 +11,14 @@ html
 
 body
   min-height: 100%
+  font-family: 'Raleway', sans-serif
+  color: $white
+
+h1
+  @include largeFont
 
 a
-  color: $whiteSmoke
+  color: $white
   text-decoration: none
   @include transition(color)
   &:hover

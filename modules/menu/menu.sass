@@ -2,22 +2,51 @@ $menuHeight: 60px
 
 .menu
   background: linear-gradient(to left, $purple, 70%, $blue)
-  color: $whiteSmoke
   width: 100%
   position: fixed
   top: 0
   left: 0
   z-index: 100
   height: $menuHeight
-  display: flex
-  align-items: center
-  justify-content: space-around
+
+  &__icon
+    display: none
+    position: relative
+    background: none
+    border: none
+    cursor: pointer
+    outline: none
+    height: calc(#{$menuHeight} - 32px)
+    width: calc(#{$menuHeight} - 16px)
+    margin: 16px 8px
+
+    &-bar
+      position: absolute
+      left: 0
+      width: 100%
+      height: 4px
+      background: $white
+      @include transition(all)
+
+      &:nth-child(1)
+        top: 0
+      &:nth-child(2)
+        top: calc(50% - 2px)
+      &:nth-child(3)
+        bottom: 0
+
+  &__container
+    background: linear-gradient(to left, $purple, 70%, $blue)
+    display: flex
+    align-items: center
+    justify-content: space-around
+    text-align: center
+    overflow: hidden
+    @include transition(height)
+
   &__item
-    @include largeFont()
-    height: 100%
+    @include largeFont
     line-height: $menuHeight
-    letter-spacing: 4px
-    font-size: 20px
     position: relative
 
     &:after
@@ -32,10 +61,31 @@ $menuHeight: 60px
 
     &:hover:after
       left: 0
-      width: 100%
+      width: calc(100% - 8px)
 
     &.highlighted
       color: $lightblue
       &:after
         left: 0
-        width: 100%
+        width: calc(100% - 8px)
+
+@include handheld
+  .menu
+    &__icon
+      display: block
+    &__container
+      height: 0
+      flex-flow: column nowrap
+    &.open
+      .menu__container
+        height: 240px
+      .menu__icon
+        &-bar
+          &:nth-child(1)
+            transform: rotate(45deg)
+            top: 12px
+          &:nth-child(2)
+            width: 0
+          &:nth-child(3)
+            transform: rotate(-45deg)
+            bottom: 12px

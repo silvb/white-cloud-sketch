@@ -3,6 +3,7 @@ import { isInViewport } from '../../utils/viewport'
 
 export default function() {
   const menuItems = arrayFromItems('.menu__item');
+  const menu = selectItem('.menu');
 
   const highlightItem = selectedItem => {
     menuItems.forEach(item => {
@@ -17,6 +18,7 @@ export default function() {
       event.preventDefault();
 
       highlightItem(item);
+      menu.classList.remove('open')
 
       const scrollId = item.getAttribute('href')
 
@@ -42,4 +44,9 @@ export default function() {
     capture: true,
     passive: true,
   })
+
+  const menuButton = selectItem('button.menu__icon');
+  menuButton.addEventListener('click', () => {
+    menu.classList.toggle('open');
+  });
 }

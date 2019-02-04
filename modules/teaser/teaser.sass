@@ -1,3 +1,8 @@
+@keyframes rotateGradient
+  @for $i from 0 through 100
+    #{$i}%
+      background: linear-gradient(#{$i * 3.6}deg, $purple, 70% ,$blue)
+
 .teaser
   height: 100vh
   width: 100%
@@ -13,3 +18,40 @@
     background-size: 80vw
     width: 40vw
     height: 40vw
+
+  &__frontmatter
+    position: relative
+    width: 400px
+    height: 350px
+
+    &-triangle
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      background: linear-gradient(0deg, $purple, 70%, $blue)
+      animation: 3s rotateGradient ease-in-out infinite
+      width: 100%
+      height: 100%
+      clip-path: polygon(50% 0, 0 100%, 6% 100%, 50% 10%, 92% 95%, 5% 95%, 5% 100%, 100% 100%)
+
+    &-headline
+      position: absolute
+      top: 30%
+      left: 50%
+      transform: translateX(-50%)
+      text-align: center
+      font-size: 48px
+      font-weight: bold
+      width: 150%
+      line-height: 96px
+
+@include handheld
+  .teaser__frontmatter
+    width: 250px
+    height: 220px
+
+    &-headline
+      font-size: 32px
+      line-height: 48px
+      width: 320px

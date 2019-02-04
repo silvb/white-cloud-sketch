@@ -1,5 +1,20 @@
-@mixin largeFont()
+@mixin largeFont
   font-family: 'Major Mono Display', monospace
+  text-transform: lowercase
+  letter-spacing: 8px
+  font-size: 22px
 
 @mixin transition($property)
   transition: $property 0.2s ease
+
+@mixin handheld
+  @media (max-width: 739px)
+    @content
+
+@mixin tablet
+  @media (min-width: 740px)
+    @content
+
+@mixin desktop
+  @media (min-width: 1113px)
+    @content
